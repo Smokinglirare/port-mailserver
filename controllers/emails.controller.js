@@ -39,11 +39,24 @@ async function getMails(req, res) {
     await model.addOne(newMail);
     res.json({ Success: "Skickade mail." });
   }
+
+  async function deleteMail(req, res) {
+    const result = await model.findOne(req.params.id);
+  
+    if (!result) {
+      return res.status(404).json({ error: "Mailet finns inte" });
+    }
+  
+    await model.deleteOne(req.params.id);
+  
+    res.json({ Success: "Mail borttaget" });
+  }
   
   module.exports = {
     getMails,
     getMail,
     addMail,
+    deleteMail
     
   };
   

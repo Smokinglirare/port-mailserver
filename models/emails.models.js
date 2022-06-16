@@ -44,10 +44,24 @@ function findAll() {
     });
   }
 
+  function deleteOne(id){
+    const sql = "DELETE FROM emails WHERE id = ?";
+    return new Promise((resolve, reject) => {
+        db.get(sql, id, (error) => {
+            if (error){
+                console.error(error.message);
+                reject(error);
+            }
+            resolve();
+        })
+    })
+}
+
   module.exports = {
     findAll,
     findOne,
     addOne,
+    deleteOne
     
   };
   
