@@ -21,16 +21,16 @@ async function getMails(req, res) {
   }
 
   async function addMail(req, res) {
-    const { firstname, lastname, email, message } = req.body;
+    const { firstname, lastname, mail, message } = req.body;
   
     const newMail = {
       firstname,
       lastname,
-      email,
+      mail,
       message
     };
   
-    if (!firstname || !lastname || !email || !message) {
+    if (!firstname || !lastname || !mail || !message) {
       return res
         .status(400)
         .json({ error: "Du måste fylla alla fält." });
