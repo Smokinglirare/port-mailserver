@@ -12,7 +12,8 @@ const db = new sqlite3.Database("./db.sqlite", (error) => {
            firstname TEXT,
            lastname TEXT,
            mail TEXT,
-           message TEXT
+           message TEXT,
+           skapad TEXT
        )
     `;
 
@@ -20,8 +21,8 @@ const db = new sqlite3.Database("./db.sqlite", (error) => {
     if (error) {
       console.error(error.message);
     } else {
-      const insert = "INSERT INTO emails (firstname, lastname, mail, message) VALUES (?, ?, ?, ?)";
-      db.run(insert, ["Sebastian", "Torneus", "Sebastian.thorneus@gmail.com", "Hej hur är läget bre?"]);
+      const insert = "INSERT INTO emails (firstname, lastname, mail, message, skapad) VALUES (?, ?, ?, ?, ?)";
+      db.run(insert, ["Sebastian", "Torneus", "Sebastian.thorneus@gmail.com", "Hej hur är läget bre?", "2016-01-03 08:50:18"]);
     }
   });
 });

@@ -31,10 +31,10 @@ function findAll() {
   }
   
   function addOne(email) {
-    const sql = "INSERT INTO emails (firstname, lastname, mail, message) VALUES (?, ?, ?, ?)";
+    const sql = "INSERT INTO emails (firstname, lastname, mail, message, skapad ) VALUES (?, ?, ?, ?, datetime('now', 'localtime'))";
   
     return new Promise((resolve, reject) => {
-      db.run(sql, [email.firstname, email.lastname, email.mail, email.message], (error) => {
+      db.run(sql, [email.firstname, email.lastname, email.mail, email.message, email.skapad], (error) => {
         if (error) {
           console.error(error.message);
           reject(error);

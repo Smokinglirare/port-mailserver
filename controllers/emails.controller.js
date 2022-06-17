@@ -21,13 +21,14 @@ async function getMails(req, res) {
   }
 
   async function addMail(req, res) {
-    const { firstname, lastname, mail, message } = req.body;
+    const { firstname, lastname, mail, message, skapad } = req.body;
   
     const newMail = {
       firstname,
       lastname,
       mail,
-      message
+      message,
+      skapad
     };
   
     if (!firstname || !lastname || !mail || !message) {
