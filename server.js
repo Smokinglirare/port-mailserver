@@ -12,6 +12,6 @@ app.use(bodyParser.json());
 
 app.use(emailsRouter);
 
-app.listen(port, () => {
+app.listen(`0.0.0.0:$PORT`, () => {
     console.log(`Servern kör på port ${port}`)
 });
