@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require('cors');
 
-//const port = 4000;
+const port = `0.0.0.0:$mail`;
 const app = express();
 
 const emailsRouter = require("./routes/emails.router");
@@ -12,6 +12,6 @@ app.use(bodyParser.json());
 
 app.use(emailsRouter);
 
-app.listen(`0.0.0.0:$mail`, () => {
-    console.log(`Servern kör på $mail`)
+app.listen(port, () => {
+    console.log(`Servern kör på${port}`)
 });
