@@ -20,7 +20,12 @@ let transporter = nodemailer.createTransport({
     }
   });
 
-  let mailOptions = "You got mail!";
+  let mailOptions = {
+    from: Pelle,
+    to: process.env.MAIL_USERNAME,
+    subject: 'Nodemailer Project',
+    text: 'Hi from your nodemailer project'
+  };
   
 
   transporter.sendMail(mailOptions, function(err, data) {
