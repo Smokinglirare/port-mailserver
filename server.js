@@ -24,8 +24,8 @@ let transporter = nodemailer.createTransport({
   let mailOptions = {
     from: sender,
     to: process.env.MAIL_USERNAME,
-    subject: 'Nodemailer Project',
-    text: 'Hi from your nodemailer project'
+    subject: 'Portfolio mailserver',
+    text: 'Du har fått mail'
   };
   
 
