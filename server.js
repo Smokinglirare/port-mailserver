@@ -20,12 +20,8 @@ let transporter = nodemailer.createTransport({
     }
   });
 
-  let mailOptions = {
-    from: Sebastian,
-    to: tomerpacific,
-    subject: 'Nodemailer Project',
-    text: 'Hi from your nodemailer project'
-  };
+  let mailOptions = "You got mail!";
+  
 
   transporter.sendMail(mailOptions, function(err, data) {
     if (err) {
