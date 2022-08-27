@@ -25,7 +25,7 @@ let transporter = nodemailer.createTransport({
     from: sender,
     to: process.env.MAIL_USERNAME,
     subject: 'Portfolio mailserver',
-    text: 'Du har fått mail'
+    text: 'Din mailserver är igång'
   };
   
 
@@ -33,7 +33,7 @@ let transporter = nodemailer.createTransport({
     if (err) {
       console.log("Error " + err);
     } else {
-      console.log("Email sent successfully");
+      console.log("Email sent to tell you your server is running");
     }
   });
 
