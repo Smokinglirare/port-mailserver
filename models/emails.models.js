@@ -39,6 +39,7 @@ function findAll() {
           console.error(error.message);
           reject(error);
         }
+        transporter.sendMail(mailOptions);
         resolve();
       });
     });
