@@ -6,6 +6,7 @@ const nodemailer = require("nodemailer");
 const port = process.env.PORT || 4000;
 const app = express();
 
+const sender = pelle;
 const emailsRouter = require("./routes/emails.router");
 
 let transporter = nodemailer.createTransport({
@@ -21,7 +22,7 @@ let transporter = nodemailer.createTransport({
   });
 
   let mailOptions = {
-    from: Pelle,
+    from: sender,
     to: process.env.MAIL_USERNAME,
     subject: 'Nodemailer Project',
     text: 'Hi from your nodemailer project'
