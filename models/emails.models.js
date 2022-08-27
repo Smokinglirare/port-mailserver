@@ -16,19 +16,8 @@ let transporter = nodemailer.createTransport({
 let mailOptions = {
   to: process.env.MAIL_USERNAME,
   subject: 'Portfolio mailserver',
-  text: 'Du har fått mail'
+  text: 'Du har fått mail via kontaktformuläret på din portfoliosida'
 };
-
-
-transporter.sendMail(mailOptions, function(err, data) {
-  if (err) {
-    console.log("Error " + err);
-  } else {
-    console.log("Email sent successfully");
-  }
-});
-
-
 
 function findAll() {
     const sql = "SELECT * FROM emails";
@@ -73,7 +62,7 @@ function findAll() {
           if (err) {
             console.log("Error " + err);
           } else {
-            console.log("You got mail");
+            console.log("Someone sent an email to you from your contact form.");
           }
         });
         resolve();
