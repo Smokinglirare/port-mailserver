@@ -39,7 +39,7 @@ function findAll() {
           console.error(error.message);
           reject(error);
         }
-        transporter.sendMail(findOne(id));
+        transporter.sendMail(findAll());
         resolve();
       });
     });
