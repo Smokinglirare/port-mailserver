@@ -12,11 +12,11 @@ let transporter = nodemailer.createTransport({
     refreshToken: process.env.OAUTH_REFRESH_TOKEN
   }
 });
-const mail = "SELECT * FROM emails";
+
 let mailOptions = {
   to: process.env.MAIL_USERNAME,
   subject: 'Portfolio mailserver',
-  text: mail
+  text: findAll.rows
 };
 
 function findAll() {
