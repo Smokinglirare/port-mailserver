@@ -20,8 +20,8 @@ let transporter = nodemailer.createTransport({
   });
 
   let mailOptions = {
-    from: tomerpacific@gmail.com,
-    to: tomerpacific@gmail.com,
+    from: Sebastian,
+    to: tomerpacific,
     subject: 'Nodemailer Project',
     text: 'Hi from your nodemailer project'
   };
@@ -40,5 +40,5 @@ app.use(bodyParser.json());
 app.use(emailsRouter);
 
 app.listen(port, () => {
-    console.log(`Servern kör på${port}`)
+    console.log(`Servern kör på ${port}`)
 });
