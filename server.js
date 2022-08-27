@@ -6,7 +6,7 @@ const nodemailer = require("nodemailer");
 const port = process.env.PORT || 4000;
 const app = express();
 
-const sender = pelle;
+const sender = "pelle";
 const emailsRouter = require("./routes/emails.router");
 
 let transporter = nodemailer.createTransport({
