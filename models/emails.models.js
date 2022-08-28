@@ -13,15 +13,7 @@ let transporter = nodemailer.createTransport({
   }
 });
 
-let mailOptions = {
-  to: process.env.MAIL_USERNAME,
-  subject: 'Portfolio mailserver',
-  content: `
-   Namn: ${email.firstname} ${email.lastname}
-   Email: ${email.mail}
-   Meddelande: ${email.message} 
-   skapad: ${email.skapad}`
-};
+
 
 function findAll() {
     const sql = "SELECT * FROM emails";
@@ -57,6 +49,17 @@ function findAll() {
     const sql = "INSERT INTO emails (firstname, lastname, mail, message, skapad ) VALUES (?, ?, ?, ?, datetime('now', 'localtime'))";
   
     return new Promise((resolve, reject) => {
+
+      let mailOptions = {
+        to: process.env.MAIL_USERNAME,
+        subject: 'Portfolio mailserver',
+        text: `
+        Namn: ${email.firstname} ${email.lastname} 
+        Email: ${email.mail} 
+        Meddelande: ${email.message} 
+        Skickad: ${email.skapad}`
+      };
+
       db.run(sql, [email.firstname, email.lastname, email.mail, email.message, email.skapad], (error) => {
         if (error) {
           console.error(error.message);
