@@ -16,7 +16,11 @@ let transporter = nodemailer.createTransport({
 let mailOptions = {
   to: process.env.MAIL_USERNAME,
   subject: 'Portfolio mailserver',
-  text: "Du  har fått ett mail via ditt kontaktformulär på ditt portfolio! Fan vad lattjo ändå!"
+  content: `
+   Namn: ${email.firstname} ${email.lastname}
+   Email: ${email.mail}
+   Meddelande: ${email.message} 
+   skapad: ${email.skapad}`
 };
 
 function findAll() {
