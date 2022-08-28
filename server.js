@@ -6,7 +6,6 @@ const nodemailer = require("nodemailer");
 const port = process.env.PORT || 4000;
 const app = express();
 
-const sender = "pelle";
 const emailsRouter = require("./routes/emails.router");
 
 let transporter = nodemailer.createTransport({
@@ -22,7 +21,6 @@ let transporter = nodemailer.createTransport({
   });
 
   let mailOptions = {
-    from: sender,
     to: process.env.MAIL_USERNAME,
     subject: 'Portfolio mailserver',
     text: 'Din mailserver är igång'
