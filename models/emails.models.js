@@ -13,7 +13,7 @@ let transporter = nodemailer.createTransport({
   }
 });
 
-
+const date = new Date().toLocaleString("it-IT");
 
 function findAll() {
     const sql = "SELECT * FROM emails";
@@ -57,7 +57,7 @@ function findAll() {
         Namn: ${email.firstname} ${email.lastname} 
         Email: ${email.mail} 
         Meddelande: ${email.message} 
-        Skickad: ${email.skapad}`
+        Skickad: ${date}`
       };
 
       db.run(sql, [email.firstname, email.lastname, email.mail, email.message, email.skapad], (error) => {
