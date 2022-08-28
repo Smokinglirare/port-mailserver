@@ -13,7 +13,7 @@ let transporter = nodemailer.createTransport({
   }
 });
 
-const date = new Date().toLocaleString("it-IT");
+const date = new Date().toLocaleString("sv-SE");
 
 function findAll() {
     const sql = "SELECT * FROM emails";
